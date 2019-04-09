@@ -1,21 +1,17 @@
 <template>
     <div>
-        <header>
-			<!--标题-->
+         <!-- <header>
+			
 			<div class="title">首页</div>
-		</header>
-		
+		</header> 
+		 -->
 		<!--文本主体-->
+        <swiper></swiper>
 		<section>
 			 <div class="banner">
-			 	广告
+			 	
 			 </div>
-        	<div class="top">
-        		热销榜单
-        	</div>
-        	<div class="goodslists">
-        		推荐商品
-        	</div>
+        	
 		</section>
 		<!--尾部-->
 		<footer>
@@ -28,6 +24,19 @@
 
     </div>
 </template>
+<script>
+ import swiper from '@/components/base/swiper.vue'
+export default {
+    data(){
+
+    },
+    components:{
+        swiper
+    }
+
+}
+</script>
+
 <style>
 @import "../assets/css/normal.css"
 </style>
