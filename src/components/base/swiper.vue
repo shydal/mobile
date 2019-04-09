@@ -1,8 +1,5 @@
 <template>
-    <div class = 'wrap_box'>
-       
-        <p style="height:200px">
-           
+    <div class="container">         
          <mt-swipe :auto="2000">
 
           <mt-swipe-item v-for="item in items" :key="item.id">
@@ -18,10 +15,6 @@
           </mt-swipe-item>
 
          </mt-swipe>
-
-        </p>
-
-
     </div>
 </template>
 <script>
@@ -44,13 +37,13 @@ export default {
 
    title: '你的名字',
 
-   href: 'http://google.com',   url: 'http://localhost:8080/static/lunbo.jpg'
+   href: 'http://google.com',   url: '/static/lunbo1.jpg'
 
   }, {
 
    title: '我的名字',
 
-   href: 'http://baidu.com',   url: 'http://localhost:8080/static/lunbo2.jpg'
+   href: 'http://baidu.com',   url: '/static/lunbo2.jpg'
 
   }]
 
@@ -62,13 +55,15 @@ export default {
 }
 </script>
 <style>
-.wrap_box {
-    max-width: 640px;
-    margin: 0 auto;
-    height: auto;
-    position: relative;
-    overflow: hidden;
+.container{
+    width: 100%;
+    height: 200px;
 }
+.img {
+    width: 100%;
+    height: 150px;
+}
+
 </style>
 
 
