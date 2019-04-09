@@ -9,7 +9,6 @@
            <img :src="item.url" class="img"/>
 
            <span class="desc"></span>
-
           </a>
 
           </mt-swipe-item>
@@ -56,7 +55,12 @@ export default {
 </script>
 <style>
 .container{
-    width: 640px;
+    width: auto;
+    height: 200px;
+    text-align: center;
+}
+.img{
+    width: auto; 
     height: 200px;
 }
 

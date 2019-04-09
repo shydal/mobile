@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import index from '@/components/index'
 import swiper from '@/components/base/swiper'
 import login from '@/components/base/login'
+import footer from '@/components/base/footer'
 
 Vue.use(Router)
 
@@ -23,6 +24,11 @@ export default new Router({
       path: '/base/login',
       name: 'login',
       component: login
+    },
+    {
+      path: '/base/footer',
+      name: 'footer',
+      component: footer
     }
   ]
 })
