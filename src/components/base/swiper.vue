@@ -55,13 +55,12 @@ export default {
 </script>
 <style>
 .container{
-    width: auto;
-    height: 200px;
-    text-align: center;
+    width: 100%;
+    height: 150px;
 }
-.img{
-    width: auto; 
-    height: 200px;
+.img {
+    width: 100%;
+    height: 150px;
 }
 
 </style>
