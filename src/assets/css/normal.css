@@ -23,7 +23,6 @@ section{
     width: 100%;
     position: absolute;
     left: 0;
-    top: 44px;
     overflow: auto;
 }
 .banner{
