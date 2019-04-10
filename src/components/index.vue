@@ -1,4 +1,5 @@
 <template>
+<div>
     <div class="container">    
         <section>
             <swiper></swiper>
@@ -73,6 +74,9 @@
         </section>
         <div style="height:"></div>
     </div>
+    <router-view/>
+</div>
+    
 </template>
 <script>
  import swiper from '@/components/base/swiper.vue'

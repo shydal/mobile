@@ -9,6 +9,7 @@ import feeList from '@/components/apply/feeList'
 import about from '@/components/about/about'
 import news from '@/components/news/news'
 import detail from '@/components/news/detail'
+import foot from '@/components/base/footer'
 Vue.use(Router)
 export default new Router({
   mode: 'history',
@@ -16,7 +17,13 @@ export default new Router({
     {
       path: '/',
       name: 'index',
-      component: index
+      component: index,
+      children: [
+        
+        { path: '', component: foot },
+
+        
+      ]
     },
     {
       path: '/base/swiper',
