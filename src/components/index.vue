@@ -24,22 +24,21 @@
         </section> -->
         <section>
             <div class="category">              
-                <div class="category-item">
-                  <div>  <img src="../assets/imgs/about.png"/></div>
+                <div class="category-item"  @click="about" >
+                  <div> <img src="../assets/imgs/about.png"/></div>
                         <span> 关于驾校</span>
                 </div>
                 <div class="category-item">
                 <div>    <img src="../assets/imgs/news.png"/></div>
                     <span> 新闻中心</span>
                 </div>
-                <div class="category-item">
+                <div class="category-item" @click="baoming">
                 <div>    <img src="../assets/imgs/baoming.png"/></div>
                         <span> 报名学车</span>
                 </div>
                 <div class="category-item">
                   <div>  <img src="../assets/imgs/team.png"/></div>
                     <span>教学团队</span>
-
                 </div>
                 <div class="category-item">
                   <div>  <img src="../assets/imgs/exam.png"/></div>
@@ -87,11 +86,21 @@ export default {
          var self=this;
         this.$axios.get('/api/license/findLicenseList').then((res)=>{ 
             if(res.data.state==='success') {
-                self.license=res.data.data;
-                
-                            
+                self.license=res.data.data;                          
             }                    
         });
+    },
+    methods:{
+        baoming(){
+            this.$router.push({
+                name:'feeList',
+            });
+        },
+        about(){
+            this.$router.push({
+                name:'about',
+            });
+        }
     },
     components:{
         swiper,
@@ -128,7 +137,6 @@ export default {
     width: 25%;
     height: 85px;
     border-radius: 50%;
-    display: inline-block;
     text-align: center;
     float: left;
     padding-bottom: 10px;
