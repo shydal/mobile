@@ -2,7 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import index from '@/components/index'
 import swiper from '@/components/base/swiper'
-import login from '@/components/base/login'
+import login from '@/components/login/index'
 import footer from '@/components/base/footer'
 
 Vue.use(Router)
@@ -20,15 +20,20 @@ export default new Router({
       name: 'swiper',
       component: swiper
     },
-    {
-      path: '/base/login',
-      name: 'login',
-      component: login
-    },
+    // {
+    //   path: '/base/login',
+    //   name: 'login',
+    //   component: login
+    // },
     {
       path: '/base/footer',
       name: 'footer',
       component: footer
+    },
+    {
+      path: '/login',
+      name: 'login',
+      component: login
     }
   ]
 })
