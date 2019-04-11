@@ -1,4 +1,5 @@
 <template>
+<div>
     <div class="container">    
         <section>
             <swiper></swiper>
@@ -73,6 +74,9 @@
         </section>
         <div style="height:"></div>
     </div>
+    <router-view/>
+</div>
+    
 </template>
 <script>
  import swiper from '@/components/base/swiper.vue'
@@ -142,7 +146,6 @@ export default {
     width: 25%;
     height: 85px;
     border-radius: 50%;
-    display: inline-block;
     text-align: center;
     float: left;
     padding-bottom: 10px;

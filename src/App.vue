@@ -3,17 +3,15 @@
    
     <!-- <img src="./assets/logo.png"> -->
     <router-view/>
-    <foot></foot>
+  
   </div>
 </template>
 
 <script>
- import foot from '@/components/base/footer.vue'
+ 
 export default {
   name: 'App',
-  components:{
-    foot,
-  }
+  
 }
 </script>
 

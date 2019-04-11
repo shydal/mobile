@@ -3,13 +3,14 @@ import Router from 'vue-router'
 import index from '@/components/index'
 import swiper from '@/components/base/swiper'
 import login from '@/components/login/index'
-import footer from '@/components/base/footer'
+import foot from '@/components/base/footer'
 import apply from '@/components/apply/apply'
 import feeList from '@/components/apply/feeList'
 import about from '@/components/about/about'
 import news from '@/components/news/news'
 import detail from '@/components/news/detail'
 import coachList from '@/components/team/coachList'
+
 Vue.use(Router)
 export default new Router({
   mode: 'history',
@@ -17,7 +18,10 @@ export default new Router({
     {
       path: '/',
       name: 'index',
-      component: index
+      component: index,
+      children: [
+        { path: '', component: foot }
+      ]
     },
     {
       path: '/base/swiper',
@@ -30,9 +34,9 @@ export default new Router({
     //   component: login
     // },
     {
-      path: '/base/footer',
-      name: 'footer',
-      component: footer
+      path: '/base/foot',
+      name: 'foot',
+      component: foot
     },
     {
       path: '/login',
