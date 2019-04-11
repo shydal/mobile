@@ -9,6 +9,7 @@ import feeList from '@/components/apply/feeList'
 import about from '@/components/about/about'
 import news from '@/components/news/news'
 import detail from '@/components/news/detail'
+import coachList from '@/components/team/coachList'
 Vue.use(Router)
 export default new Router({
   mode: 'history',
@@ -62,6 +63,11 @@ export default new Router({
       path: '/news/detail',
       name: 'detail',
       component: detail
+    },
+    {
+      path: '/team/coachList',
+      name: 'coachList',
+      component: coachList
     }
   ]
 })

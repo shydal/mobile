@@ -28,7 +28,7 @@
                   <div> <img src="../assets/imgs/about.png"/></div>
                         <span> 关于驾校</span>
                 </div>
-                <div class="category-item">
+                <div class="category-item" @click="news">
                 <div>    <img src="../assets/imgs/news.png"/></div>
                     <span> 新闻中心</span>
                 </div>
@@ -99,6 +99,11 @@ export default {
         about(){
             this.$router.push({
                 name:'about',
+            });
+        },
+        news(){
+            this.$router.push({
+                name:'news',
             });
         }
     },

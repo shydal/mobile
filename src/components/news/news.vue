@@ -46,7 +46,7 @@
         </mt-cell> -->
 
         <div class="news-item" v-for="item in result" :key="item.id" @click="toAnnounce(item.id)">
-            <div class="title">
+            <div class="titles">
                 {{item.title}}
             </div>
             <div class="time">
@@ -69,32 +69,36 @@
            123 
         </mt-tab-container-item>
         </mt-tab-container> -->
-         <div class="fenye"><center><table cellspacing="0" cellpadding="0" border="0">
-<form method="get" onsubmit="document.location = 'http://www.hkhxjx.com/news.asp?Classid=11&amp;Page='+ this.page.value;return false;"></form><tbody><tr>
-<td align="right">
-    <template v-if="pageIndex<=1">
-       首页
-       上一页  
-    </template> 
-    <template v-if="pageIndex>1">
-       <a href="javascript:void(0)" @click="first">首页</a>
-       <a href="javascript:void(0)" @click="pre">上一页</a> 
-    </template> 
-    <template v-if="pageIndex>=totalPages">
-       下一页 
-       尾页 
-    </template> 
-    <template v-else>
-       <a href="javascript:void(0)" @click="next">下一页</a>
-       <a href="javascript:void(0)" @click="end">尾页</a> 
-    </template> 
- 第&nbsp;<input tyep="TEXT" name="page" size="2" v-model="pageIndex" maxlength="4" >&nbsp;页
-<input type="button" value="GO" @click="search"> 共 {{totalPages}} 页
- <!-- {{total}} 条信息 -->
-</td>
-</tr>
-</tbody></table>
-</center></div>     
+         <div class="fenye">
+             <center>
+                 <table cellspacing="0" cellpadding="0" border="0">
+                    <form method="get" onsubmit="document.location = 'http://www.hkhxjx.com/news.asp?Classid=11&amp;Page='+ this.page.value;return false;"></form><tbody><tr>
+                    <td align="right">
+                        <template v-if="pageIndex<=1">
+                        首页
+                        上一页  
+                        </template> 
+                        <template v-if="pageIndex>1">
+                        <a href="javascript:void(0)" @click="first">首页</a>
+                        <a href="javascript:void(0)" @click="pre">上一页</a> 
+                        </template> 
+                        <template v-if="pageIndex>=totalPages">
+                        下一页 
+                        尾页 
+                        </template> 
+                        <template v-else>
+                        <a href="javascript:void(0)" @click="next">下一页</a>
+                        <a href="javascript:void(0)" @click="end">尾页</a> 
+                        </template> 
+                    第&nbsp;<input tyep="TEXT" name="page" size="2" v-model="pageIndex" maxlength="4" >&nbsp;页
+                    <input type="button" value="GO" @click="search"> 共 {{totalPages}} 页
+                    <!-- {{total}} 条信息 -->
+                    </td>
+                    </tr>
+                    </tbody>
+            </table>
+</center>
+</div>     
     </div>
 </template>
 <script>
@@ -179,7 +183,7 @@ export default {
     padding-top: 30px;
 }
 .fenye{
-     z-index:99;
+    
      width:100%;
      text-align:center; 
      height:20px; 
@@ -190,10 +194,11 @@ export default {
 }
 
 .news-item{
-     width: 100%;
+    width: 100%;
     height: 50px;
+    border-bottom: 1px solid #e7e7e7;
 }
-.title{
+.titles{
     padding-left: 10px;
     padding-top: 10px;
     height: 20px;
