@@ -10,7 +10,7 @@ import about from '@/components/about/about'
 import news from '@/components/news/news'
 import detail from '@/components/news/detail'
 import coachList from '@/components/team/coachList'
-
+import coach from '@/components/team/coach'
 Vue.use(Router)
 export default new Router({
   mode: 'history',
@@ -72,6 +72,12 @@ export default new Router({
       path: '/team/coachList',
       name: 'coachList',
       component: coachList
+    },
+    {
+      path: '/team/coach',
+      name: 'coach',
+      component: coach
     }
+
   ]
 })

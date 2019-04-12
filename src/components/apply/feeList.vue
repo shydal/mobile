@@ -47,7 +47,7 @@
                 <div class="baoming-item" v-for="item in license" :key="item.id">
                     <div class="fenli">
                         <div class="left">{{item.type}}&nbsp;&nbsp;￥{{item.money}}</div>
-                        <div class="right"><mt-button type="primary">我要报名</mt-button></div>
+                        <div class="right"  ><mt-button type="primary"  @click.native="handleClick">我要报名</mt-button></div>
                     </div>
                 </div>
             </div>
@@ -65,12 +65,20 @@ export default {
             license:null
         }
     },
+    methods:{
+        handleClick(){
+           
+            this.$router.push({
+                name:'apply',
+            });
+       
+        }
+    },
      created(){
          var self=this;
         this.$axios.get('/api/license/findLicenseList').then((res)=>{ 
             if(res.data.state==='success') {
-                self.license=res.data.data;
-                                    
+                self.license=res.data.data;                                   
             }                    
         });
     },

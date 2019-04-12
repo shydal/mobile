@@ -44,7 +44,6 @@
                 :key="item.id" 
                 >
         </mt-cell> -->
-
         <div class="news-item" v-for="item in result" :key="item.id" @click="toAnnounce(item.id)">
             <div class="titles">
                 {{item.title}}

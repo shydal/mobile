@@ -1,10 +1,21 @@
 <template>
     <div>
+        <form action="" v-on:submit.prevent="">
+            <mt-search
+            v-model="value"
+            cancel-text="取消"
+            placeholder="请输入搜索标题"
+            @keyup.enter.native="search"
+            class="font-size-8"
+            style="width:100%;height:auto;"
+            >
+            </mt-search>
+        </form>
         <div class="movie_list">
             <ul>
-                <li v-for="item in coachList" :key="item.id">
+                <li v-for="item in coachList" :key="item.id" @click="tocoach(item.id)">
                     <a href="javacrript:void(0)">
-                        <img :src="'http://192.168.1.100:8081'+ item.image" width="60%"/>
+                        <img :src="'http://192.168.1.104:8081'+ item.image" width="60%"/>
                     </a>
                     <div> <span > {{item.name}}</span></div>
                 </li>               
@@ -54,6 +65,7 @@ export default {
              pageSize:6,
              total:0,
              totalPages:0,
+             value:null
         }
     },
     methods:{
@@ -63,7 +75,8 @@ export default {
         {
             params: {
                 pageIndex:this.pageIndex,
-                pageSize:this.pageSize
+                pageSize:this.pageSize,
+                name:this.value
             }
         }).then(function(data){       
             self.coachList = data.data.data.content;
@@ -87,7 +100,15 @@ export default {
         end:function(){
             this.pageIndex=this.totalPages;
             this.search();
-        }
+        },
+         tocoach(id){
+         this.$router.push({
+                        name: 'coach',
+                        query: {
+                        id: id
+                        }
+                    })      
+         }
     },
     created(){
         this.search();

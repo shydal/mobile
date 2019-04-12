@@ -63,6 +63,15 @@ export default {
     text-align: justify;
     margin-top: 20px;
 }
+.fenye{   
+     width:100%;
+     text-align:center; 
+     height:20px; 
+     line-height:20px;
+      padding-top:10px; 
+      font-size:14px; 
+      margin-top:10px;
+}
 </style>
 
 
