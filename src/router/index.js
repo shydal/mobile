@@ -11,6 +11,8 @@ import news from '@/components/news/news'
 import detail from '@/components/news/detail'
 import coachList from '@/components/team/coachList'
 import coach from '@/components/team/coach'
+import subscribe from '@/components/subscribe/subscribe'
+import booking from '@/components/subscribe/booking'
 Vue.use(Router)
 export default new Router({
   mode: 'history',
@@ -77,7 +79,16 @@ export default new Router({
       path: '/team/coach',
       name: 'coach',
       component: coach
+    },
+    {
+      path: '/subscribe/subscribe',
+      name: 'subscribe',
+      component: subscribe
+    },
+    {
+      path: '/subscribe/booking',
+      name: 'booking',
+      component: booking
     }
-
   ]
 })

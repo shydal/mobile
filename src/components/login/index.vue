@@ -5,10 +5,9 @@ export default {
     data(){
         return{
             message:'',
-            error:false,
-                              
-                    username:'',
-                    password:'',
+            error:false,                         
+            username:'',
+            password:'',
            
         }
     },
