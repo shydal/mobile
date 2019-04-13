@@ -13,6 +13,8 @@ import coachList from '@/components/team/coachList'
 import coach from '@/components/team/coach'
 import subscribe from '@/components/subscribe/subscribe'
 import booking from '@/components/subscribe/booking'
+import exam from '@/components/exam/index'
+import paper from '@/components/exam/paper'
 Vue.use(Router)
 export default new Router({
   mode: 'history',
@@ -89,6 +91,16 @@ export default new Router({
       path: '/subscribe/booking',
       name: 'booking',
       component: booking
+    },
+    {
+      path: '/exam/index',
+      name: 'exam',
+      component: exam
+    },
+    {
+      path: '/exam/paper',
+      name: 'paper',
+      component: paper
     }
   ]
 })
