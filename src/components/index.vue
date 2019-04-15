@@ -39,7 +39,7 @@
                     <span>教学团队</span>
                 </div>
                 <div class="category-item">
-                  <div>  <img src="../assets/imgs/exam.png"/></div>
+                  <div>  <img src="../assets/imgs/exam.png" @click="exam"/></div>
                     <span> 模拟考试</span>
                 </div>
                 <div class="category-item">
@@ -110,6 +110,11 @@ export default {
         apply(){
             this.$router.push({
                 name:'apply',
+            });
+        },
+        exam(){
+            this.$router.push({
+                name:'exam',
             });
         }
     },

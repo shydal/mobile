@@ -15,7 +15,7 @@
             <ul>
                 <li v-for="item in coachList" :key="item.id" @click="tocoach(item.id)">
                     <a href="javacrript:void(0)">
-                        <img :src="'http://192.168.1.104:8081'+ item.image" width="60%"/>
+                        <img :src="'http://192.168.1.105:8081'+ item.image" width="60%"/>
                     </a>
                     <div> <span > {{item.name}}</span></div>
                 </li>               

@@ -15,6 +15,9 @@ import subscribe from '@/components/subscribe/subscribe'
 import booking from '@/components/subscribe/booking'
 import exam from '@/components/exam/index'
 import paper from '@/components/exam/paper'
+import result from '@/components/exam/result'
+import error from '@/components/exam/error'
+import score from '@/components/exam/sore'
 Vue.use(Router)
 export default new Router({
   mode: 'history',
@@ -101,6 +104,21 @@ export default new Router({
       path: '/exam/paper',
       name: 'paper',
       component: paper
+    },
+    {
+      path: '/exam/result',
+      name: 'result',
+      component: result
+    },
+    {
+      path: '/exam/error',
+      name: 'error',
+      component: error
+    },
+    {
+      path: '/exam/score',
+      name: 'score',
+      component: score
     }
   ]
 })
