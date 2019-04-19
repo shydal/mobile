@@ -35,7 +35,7 @@
                         <span> 报名学车</span>
                 </div>
                 <div class="category-item">
-                  <div>  <img src="../assets/imgs/team.png"/></div>
+                  <div>  <img src="../assets/imgs/team.png" @click="team"/></div>
                     <span>教学团队</span>
                 </div>
                 <div class="category-item">
@@ -115,6 +115,11 @@ export default {
         exam(){
             this.$router.push({
                 name:'exam',
+            });
+        },
+        team(){
+            this.$router.push({
+                name:'team',
             });
         }
     },

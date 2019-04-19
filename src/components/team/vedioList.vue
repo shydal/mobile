@@ -13,11 +13,11 @@
         </form>
         <div class="movie_list">
             <ul>
-                <li v-for="item in coachList" :key="item.id" @click="tocoach(item.id)">
+                <li v-for="item in videoList" :key="item.id" @click="toplayer(item.id)">
                     <a href="javacrript:void(0)">
-                        <img :src="'http://192.168.1.108:8081'+ item.image" width="60%"/>
+                        <img :src="'http://192.168.1.108:8081'+ item.img" width="100%" height="100%"/>
                     </a>
-                    <div> <span > {{item.name}}</span></div>
+                    <div> <span > {{item.title}}</span></div>
                 </li>               
             </ul>
         </div>
@@ -25,7 +25,7 @@
         <div class="fenye">
              <center>
                  <table cellspacing="0" cellpadding="0" border="0">
-                    <form method="get" onsubmit="document.location = 'http://www.hkhxjx.com/news.asp?Classid=11&amp;Page='+ this.page.value;return false;"></form><tbody><tr>
+                    <form method="get" ></form><tbody><tr>
                     <td align="right">
                         <template v-if="pageIndex<=1">
                         首页
@@ -56,12 +56,13 @@
 
     </div>
 </template>
-
 <script>
+import { debug } from 'util';
 export default {
      data(){
         return{
-             coachList:null,
+             videoList:null,
+             subjectId:'3',
              pageIndex:1,
              pageSize:6,
              total:0,
@@ -69,23 +70,25 @@ export default {
              value:null
         }
     },
-    methods:{
+    methods:{    
         search(){
-        var self = this;      
-        this.$axios.get('/api/user/findUserList',
-        {
-            params: {
-                pageIndex:this.pageIndex,
-                pageSize:this.pageSize,
-                name:this.value,
-                licenseId:this.$store.state.licenseId
+         var self = this;
+             this.$axios.get('/api/video/getVideoList',{
+          params:{                           
+                 subjectId:this.subjectId,
+                 pageIndex:this.pageIndex,
+                 pageSize:this.pageSize                        
             }
-        }).then(function(data){       
-            self.coachList = data.data.data.content;
-            self.total =data.data.data.total;
-            self.pageIndex=data.data.data.pageNumber;
-            self.totalPages=data.data.data.totalPages;                 
-        });
+        } ).then((res)=>{
+            if(res.data.state=='success'){             
+                 self.videoList = res.data.data.content;
+                    self.total =res.data.data.total;
+                    self.pageIndex=res.data.data.pageNumber;
+                    self.totalPages=res.data.data.totalPages;
+            }else{
+                self.videoList = null;
+            }
+        },);
         },
          next:function(){
             this.pageIndex=this.pageIndex+1;
@@ -103,14 +106,14 @@ export default {
             this.pageIndex=this.totalPages;
             this.search();
         },
-         tocoach(id){
-         this.$router.push({
-                        name: 'booking',
+        toplayer(id){
+                 this.$router.push({
+                        name: 'player',
                         query: {
                         id: id
                         }
-                    })      
-         }
+                    })
+        }
     },
     created(){
         this.search();
@@ -131,7 +134,7 @@ export default {
 }
 .movie_list ul li {
     width: 45%;
-    margin: 0 0 0 3%;
+    margin: 0 0 0 5%;
     padding-top: 10px;
     float: left;
     position: relative;
@@ -142,6 +145,7 @@ a {
     color: #000;
     text-decoration: none;
     outline: 0 none;
+    overflow: hidden;
     -webkit-transition: all .2s linear;
     -moz-transition: all .2s linear;
     -ms-transition: all .2s linear;
@@ -154,9 +158,10 @@ a {
      text-align:center; 
      height:20px; 
      line-height:20px;
-      font-size:14px; 
+    font-size:14px; 
       margin-top:10px;
       padding-top: 20px;
 }
 </style>
+
 

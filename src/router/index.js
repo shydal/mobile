@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import index from '@/components/index'
 import swiper from '@/components/base/swiper'
 import login from '@/components/login/index'
+import register from '@/components/register/index'
 import foot from '@/components/base/footer'
 import apply from '@/components/apply/apply'
 import feeList from '@/components/apply/feeList'
@@ -18,6 +19,9 @@ import paper from '@/components/exam/paper'
 import result from '@/components/exam/result'
 import error from '@/components/exam/error'
 import score from '@/components/exam/sore'
+import video from '@/components/team/vedioList'
+import player from '@/components/team/player'
+import team from '@/components/team/index'
 Vue.use(Router)
 export default new Router({
   mode: 'history',
@@ -119,6 +123,26 @@ export default new Router({
       path: '/exam/score',
       name: 'score',
       component: score
+    },
+    {
+      path: '/team/video',
+      name: 'video',
+      component: video
+    },
+    {
+      path: '/team/player',
+      name: 'player',
+      component: player
+    },
+    {
+      path: '/team/index',
+      name: 'team',
+      component: team
+    },
+    {
+      path: '/register',
+      name: 'register',
+      component: register
     }
   ]
 })

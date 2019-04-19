@@ -1,0 +1,48 @@
+<section class="loginContainer">
+    <div class="loginInner">
+      <div class="login_header">
+        <h2 class="login_logo">掌上驾校</h2> 
+        
+      </div> 
+      <div class="login_content">
+        <form>       
+          <div class="on">
+            <section>
+                <!-- <font color="red">sdfdsfsf</font> -->
+              <span v-if="error" class="{ active: error }">{{message}}</span>
+              <section class="login_message">
+                <input type="text" maxlength="11" v-model="username" placeholder="用户名">
+              </section> 
+              <section class="login_message">
+                <input type="text" maxlength="11" v-model="phone" placeholder="手机号">
+              </section>
+             <section>
+                  <input type="radio" name="radios" value="M" v-model="gender"><label>男</label>
+                  <input type="radio" name="radios" value="F" v-model="gender"><label>女</label>
+             </section>
+               
+              <section class="login_verification">
+                <input type="password" maxlength="8" v-model="password" placeholder="密码"> 
+                <div class="switch_button off off">
+                  <div class="switch_circle"></div> 
+                  <span class="switch_text">...</span>
+                </div>
+              </section>
+              <section class="login_verification">
+                <input type="password" maxlength="8" v-model="repassword" placeholder="确认密码"> 
+                <div class="switch_button off off">
+                  <div class="switch_circle"></div> 
+                  <span class="switch_text">...</span>
+                </div>
+              </section>             
+            </section>
+          </div> 
+          <button class="login_submit" type="button" @click="login">注册</button>
+        </form> 
+        <!-- <a href="javascript:;" class="about_us">没账号去注册</a> -->
+      </div> 
+      <a href="javascript:" class="go_back">
+        <i class="iconfont icon-arrow-left"></i>
+      </a>
+    </div>
+  </section> 
