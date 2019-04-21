@@ -10,8 +10,8 @@
         <div class="tiaozhuan">
         <mt-cell title="教练列表" to="/team/coachList" is-link></mt-cell>
         <mt-cell title="学车视频" to="/team/video"  is-link></mt-cell>
-        <mt-cell title="添加教练"  is-link></mt-cell>
-        <mt-cell title="添加视频"  is-link></mt-cell>
+        <mt-cell title="添加教练" to="/team/addCoach" is-link></mt-cell>
+        <mt-cell title="添加视频"  to="/team/addVideo" is-link></mt-cell>
     </div>
     </div>
 </template>

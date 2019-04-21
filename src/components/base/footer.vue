@@ -9,7 +9,7 @@
     登陆
   </mt-tab-item>
   <mt-tab-item id="tab3" v-if="this.$store.state.id">
- <img slot="icon" src="../../assets/imgs/login.png" @click="login">
+ <img slot="icon" src="../../assets/imgs/login.png" @click="self">
     我的
   </mt-tab-item>
 
@@ -29,6 +29,11 @@ export default {
     login(){
          this.$router.push({
                 name:'login',
+          });
+    },
+    self(){
+         this.$router.push({
+                name:'self',
           });
     }
   }

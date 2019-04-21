@@ -49,8 +49,7 @@ export default {
   }
 
  }
-
-    
+   
 }
 </script>
 <style>
@@ -62,7 +61,6 @@ export default {
     width: 100%;
     height: 150px;
 }
-
 </style>
 
 

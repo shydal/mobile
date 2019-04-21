@@ -10,6 +10,7 @@ import feeList from '@/components/apply/feeList'
 import about from '@/components/about/about'
 import news from '@/components/news/news'
 import detail from '@/components/news/detail'
+import addNews from '@/components/news/addNews'
 import coachList from '@/components/team/coachList'
 import coach from '@/components/team/coach'
 import subscribe from '@/components/subscribe/subscribe'
@@ -19,9 +20,15 @@ import paper from '@/components/exam/paper'
 import result from '@/components/exam/result'
 import error from '@/components/exam/error'
 import score from '@/components/exam/sore'
+import input from '@/components/exam/input'
 import video from '@/components/team/vedioList'
 import player from '@/components/team/player'
 import team from '@/components/team/index'
+import addCoach from '@/components/team/addCoach'
+import addVideo from '@/components/team/addVideo'
+import self from '@/components/self/index'
+import change from '@/components/self/change'
+import confirm from '@/components/self/confirm'
 Vue.use(Router)
 export default new Router({
   mode: 'history',
@@ -80,6 +87,11 @@ export default new Router({
       component: detail
     },
     {
+      path: '/news/addNews',
+      name: 'addNews',
+      component: addNews
+    },
+    {
       path: '/team/coachList',
       name: 'coachList',
       component: coachList
@@ -115,6 +127,11 @@ export default new Router({
       component: result
     },
     {
+      path: '/exam/input',
+      name: 'input',
+      component: input
+    },
+    {
       path: '/exam/error',
       name: 'error',
       component: error
@@ -143,6 +160,31 @@ export default new Router({
       path: '/register',
       name: 'register',
       component: register
+    },
+    {
+      path: '/team/addCoach',
+      name: 'addCoach',
+      component: addCoach
+    },
+    {
+      path: '/team/addVideo',
+      name: 'addVideo',
+      component: addVideo
+    },
+    {
+      path: '/self',
+      name: 'self',
+      component: self
+    },
+    {
+      path: '/self/change',
+      name: 'change',
+      component: change
+    },
+    {
+      path: '/self/confirm',
+      name: 'confirm',
+      component: confirm
     }
   ]
 })

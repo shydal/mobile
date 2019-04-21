@@ -1,17 +1,18 @@
 <template>
 <div>
     <div>
-        <mt-header fixed title="模拟考试">
+        <mt-header fixed title="个人中心">
             <router-link to="/" slot="left">
                 <mt-button icon="back">返回</mt-button>
             </router-link>
         </mt-header>
     </div>
     <div class="tiaozhuan">
-        <mt-cell title="c1驾照 科目一" to="/exam/paper?licenseId=5&subjectId=1" is-link></mt-cell>
-        <mt-cell title="c1驾照 科目四" to="/exam/paper?licenseId=5&subjectId=5"  is-link></mt-cell>
-        <mt-cell title="成绩录入"  to= "/exam/score" is-link></mt-cell>
-        <mt-cell title="历史成绩"  is-link></mt-cell>
+        <mt-cell title="修改密码" to="/self/change" is-link></mt-cell>
+        <mt-cell title="添加资讯" to="/news/addNews"  is-link></mt-cell>
+        <mt-cell title="确认预约" to="/self/confirm"  is-link></mt-cell>
+
+
     </div>
 </div>
     
@@ -27,7 +28,8 @@ export default {
         hah(id){
             console.log("fjkd");
         }
-    }  
+    }
+    
 }
 </script>
 
@@ -38,4 +40,3 @@ export default {
     padding-top: 30px;
 }
 </style>
-

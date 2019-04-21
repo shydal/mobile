@@ -8,8 +8,12 @@ import MintUI from 'mint-ui'
 import 'mint-ui/lib/style.css'
 import Vuex from 'vuex'
 import store from './vuex/store'
+import VueQuillEditor from 'vue-quill-editor'
+import 'quill/dist/quill.core.css'
+import 'quill/dist/quill.snow.css'
+import 'quill/dist/quill.bubble.css'
 Vue.use(Vuex)
-
+Vue.use(VueQuillEditor)
 // import { Button, Cell } from 'mint-ui'
 // Vue.component(Button.name, Button)
 // Vue.component(Cell.name, Cell)

@@ -47,7 +47,7 @@
                 <div class="baoming-item" v-for="item in license" :key="item.id">
                     <div class="fenli">
                         <div class="left">{{item.type}}&nbsp;&nbsp;￥{{item.money}}</div>
-                        <div class="right"  ><mt-button type="primary"  @click.native="handleClick">我要报名</mt-button></div>
+                        <div class="right"  ><mt-button type="primary"  @click.native="handleClick(item.id)">我要报名</mt-button></div>
                     </div>
                 </div>
             </div>
@@ -66,10 +66,13 @@ export default {
         }
     },
     methods:{
-        handleClick(){
+        handleClick(id){
            
             this.$router.push({
                 name:'apply',
+                 query: {
+                        id: id
+                        }
             });
        
         }
