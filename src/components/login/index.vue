@@ -7,12 +7,14 @@ export default {
             message:'',
             error:false,                         
             username:'',
-            password:'',
-           
+            password:'',        
         }
     },
     methods:{
-         login: function() {
+        register(){
+            this.$router.push('/register');
+        },
+        login: function() {
                 var self = this 
                var ruleform = ({
                    username:this.username,

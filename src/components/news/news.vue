@@ -107,7 +107,7 @@ export default {
             selected:'1',
             value:null,
             pageIndex:1,
-            pageSize:2,
+            pageSize:5,
             total:0,
             totalPages:0,
             result:null,

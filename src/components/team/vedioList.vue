@@ -15,7 +15,7 @@
             <ul>
                 <li v-for="item in videoList" :key="item.id" @click="toplayer(item.id)">
                     <a href="javacrript:void(0)">
-                        <img :src="'http://192.168.1.108:8081'+ item.img" width="100%" height="100%"/>
+                        <img :src="HTTP+ item.img" width="100%" height="100%"/>
                     </a>
                     <div> <span > {{item.title}}</span></div>
                 </li>               

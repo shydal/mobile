@@ -9,7 +9,7 @@
         </div>
         <div class="jianjie">
             <div class="jpg">
-                <img :src="'http://192.168.1.108:8081'+coach.image" width="50%">
+                <img :src="HTTP+coach.image" width="50%">
                 <div class="wenzi"> 
                <div class="info"><em><strong>姓名：</strong>{{coach.name}}</em><br></div>
                <div class="info">   <em ><strong>电话：</strong>{{coach.phone}}</em><br /> </div>

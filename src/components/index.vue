@@ -43,16 +43,16 @@
                     <span> 模拟考试</span>
                 </div>
                 <div class="category-item">
-                  <div>  <img src="../assets/imgs/booking.png"/></div>
+                  <div>  <img src="../assets/imgs/booking.png" @click="booking"/></div>
                     <span> 预约教练</span>
                 </div>
                 <div class="category-item">
                   <div>  <img src="../assets/imgs/help.png"/></div>
-                    <span> 帮助中心</span>
+                    <span> 联系我们</span>
                 </div>
                 <div class="category-item">
-                  <div>  <img src="../assets/imgs/about.png"/></div>
-                    <span> 关于驾校</span>
+                  <!-- <div>  <img src="../assets/imgs/about.png"/></div>
+                    <span> 关于驾校</span> -->
                 </div>
             </div>
         </section>
@@ -90,6 +90,7 @@ export default {
                 self.license=res.data.data;                          
             }                    
         });
+        console.log(HTTP);
     },
     methods:{
         baoming(){
@@ -123,6 +124,11 @@ export default {
         team(){
             this.$router.push({
                 name:'team',
+            });
+        },
+        booking(){
+            this.$router.push({
+                name:'subscribe',
             });
         }
     },

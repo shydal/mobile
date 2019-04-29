@@ -12,6 +12,7 @@ import VueQuillEditor from 'vue-quill-editor'
 import 'quill/dist/quill.core.css'
 import 'quill/dist/quill.snow.css'
 import 'quill/dist/quill.bubble.css'
+Vue.prototype.HTTP = 'http://192.168.1.112:8081'
 Vue.use(Vuex)
 Vue.use(VueQuillEditor)
 // import { Button, Cell } from 'mint-ui'

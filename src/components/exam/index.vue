@@ -24,9 +24,9 @@ export default {
         }
     },
     methods:{
-        hah(id){
-            console.log("fjkd");
-        }
+        // hah(id){
+        //     console.log("fjkd");
+        // }
     }  
 }
 </script>

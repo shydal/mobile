@@ -29,6 +29,11 @@ import addVideo from '@/components/team/addVideo'
 import self from '@/components/self/index'
 import change from '@/components/self/change'
 import confirm from '@/components/self/confirm'
+import mybooking from '@/components/subscribe/mybooking'
+import explains from '@/components/subscribe/explains'
+import explain from '@/components/subscribe/detail'
+import comment from '@/components/self/comment'
+import addComment from '@/components/self/addComment'
 Vue.use(Router)
 export default new Router({
   mode: 'history',
@@ -185,6 +190,31 @@ export default new Router({
       path: '/self/confirm',
       name: 'confirm',
       component: confirm
+    },
+    {
+      path: '/self/mybooking',
+      name: 'mybooking',
+      component: mybooking
+    },
+    {
+      path: '/subscribe/explains',
+      name: 'explains',
+      component: explains
+    },
+    {
+      path: '/subscribe/explain',
+      name: 'explain',
+      component: explain
+    },
+    {
+      path: '/self/comment',
+      name: 'comment',
+      component: comment
+    },
+    {
+      path: '/self/addComment',
+      name: 'addComment',
+      component: addComment
     }
   ]
 })

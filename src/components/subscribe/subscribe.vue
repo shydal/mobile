@@ -1,6 +1,14 @@
 <template>
+
     <div>
-        <form action="" v-on:submit.prevent="">
+        <!-- <div class="head">
+        <mt-header fixed title="选择教练">
+            <router-link to="/" slot="left">
+                <mt-button icon="back">返回</mt-button>
+            </router-link>
+        </mt-header>
+        </div> -->
+        <div class="search">
             <mt-search
             v-model="value"
             cancel-text="取消"
@@ -10,12 +18,12 @@
             style="width:100%;height:auto;"
             >
             </mt-search>
-        </form>
+        </div>
         <div class="movie_list">
             <ul>
                 <li v-for="item in coachList" :key="item.id" @click="tocoach(item.id)">
                     <a href="javacrript:void(0)">
-                        <img :src="'http://192.168.1.108:8081'+ item.image" width="60%"/>
+                        <img :src="HTTP+ item.image" width="60%"/>
                     </a>
                     <div> <span > {{item.name}}</span></div>
                 </li>               
@@ -119,7 +127,12 @@ export default {
 </script>
 
 <style>
+.search{
+    /* padding-top: 40px; */
+    width: 100%;
+}
 .movie_list {
+    width: 100%;
     margin: 0px;
     padding: 0px;
     text-align: center;

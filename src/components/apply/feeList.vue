@@ -10,7 +10,7 @@
 <div class="top">
 <mt-navbar v-model="selected">
   <mt-tab-item id="1">报名材料</mt-tab-item>
-  <mt-tab-item id="2">选项二</mt-tab-item>
+  <mt-tab-item id="2">报名流程</mt-tab-item>
   <mt-tab-item id="3">我要报名</mt-tab-item>
 </mt-navbar>
 </div>

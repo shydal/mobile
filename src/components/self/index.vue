@@ -10,8 +10,9 @@
     <div class="tiaozhuan">
         <mt-cell title="修改密码" to="/self/change" is-link></mt-cell>
         <mt-cell title="添加资讯" to="/news/addNews"  is-link></mt-cell>
-        <mt-cell title="确认预约" to="/self/confirm"  is-link></mt-cell>
-
+        <mt-cell title="确认报名" to="/self/confirm"  is-link></mt-cell>
+        <mt-cell title="我要评价" to="/self/comment"  is-link></mt-cell>
+        <mt-cell title="我的预约" to="/self/mybooking"  is-link></mt-cell>
 
     </div>
 </div>
@@ -25,9 +26,9 @@ export default {
         }
     },
     methods:{
-        hah(id){
-            console.log("fjkd");
-        }
+        // hah(id){
+        //     console.log("fjkd");
+        // }
     }
     
 }

@@ -5,7 +5,7 @@
         </div>
         <div>
             <div>
-                <video controls  id="my-video_html5_api" class="vjs-tech" preload="auto" :poster="'http://192.168.1.108:8081'+ video.img"  :src="'http://192.168.1.108:8081'+ video.video" width="100%" height="100%"></video>               
+                <video controls  id="my-video_html5_api" class="vjs-tech" preload="auto" :poster="HTTP+ video.img"  :src="HTTP+ video.video" width="100%" height="100%"></video>               
                 </div>
         </div>
         <div class="duration">
