@@ -28,9 +28,11 @@
                             </tbody>
                         </table> 
         </div>
+        <foot></foot>
     </div>
 </template>
 <script>
+import foot from '@/components/base/footer'
 export default {
     data(){
         return {
@@ -52,6 +54,9 @@ export default {
             }
         });
 
+    },
+    components:{
+        foot
     }
 }
 </script>

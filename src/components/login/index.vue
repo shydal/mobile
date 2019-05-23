@@ -24,7 +24,7 @@ export default {
                 if(res.data.state=="success"){                                  
                         self.$store.commit('handle',{
                             username:res.data.data.username,
-                             id:res.data.data.id,
+                            id:res.data.data.id,
                             licenseId:res.data.data.licenseId,
                             role:JSON.stringify(res.data.data.role)
                         });   

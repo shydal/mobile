@@ -27,7 +27,7 @@
 </template>
 <style>
 .top{
-    padding-top:30px;
+    padding-top:40px;
 }
 </style>
 

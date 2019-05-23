@@ -34,6 +34,7 @@ import explains from '@/components/subscribe/explains'
 import explain from '@/components/subscribe/detail'
 import comment from '@/components/self/comment'
 import addComment from '@/components/self/addComment'
+import contact from '@/components/contact/contact'
 Vue.use(Router)
 export default new Router({
   mode: 'history',
@@ -84,12 +85,20 @@ export default new Router({
     {
       path: '/news/news',
       name: 'news',
-      component: news
+      component: news,
+      children: [
+        { path: '', component: foot }
+      ]
     },
     {
       path: '/news/detail',
       name: 'detail',
       component: detail
+    },
+    {
+      path: '/contact',
+      name: 'contact',
+      component: contact
     },
     {
       path: '/news/addNews',
@@ -109,42 +118,66 @@ export default new Router({
     {
       path: '/subscribe/subscribe',
       name: 'subscribe',
-      component: subscribe
+      component: subscribe,
+      meta: {
+        role: 'student' // 添加该字段，表示进入这个路由是需要登录的
+      }
     },
     {
       path: '/subscribe/booking',
       name: 'booking',
-      component: booking
+      component: booking,
+      meta: {
+        role: 'student' // 添加该字段，表示进入这个路由是需要登录的
+      }
     },
     {
       path: '/exam/index',
       name: 'exam',
-      component: exam
+      component: exam,
+      meta: {
+        role: 'user' // 添加该字段，表示进入这个路由是需要登录的
+      }
     },
     {
       path: '/exam/paper',
       name: 'paper',
-      component: paper
+      component: paper,
+      meta: {
+        role: 'user' // 添加该字段，表示进入这个路由是需要登录的
+      }
     },
     {
       path: '/exam/result',
       name: 'result',
-      component: result
+      component: result,
+      meta: {
+        role: 'user' // 添加该字段，表示进入这个路由是需要登录的
+      }
     },
     {
       path: '/exam/input',
       name: 'input',
-      component: input
+      component: input,
+      meta: {
+        role: 'student' // 添加该字段，表示进入这个路由是需要登录的
+      }
     },
     {
       path: '/exam/error',
       name: 'error',
-      component: error
+      component: error,
+      meta: {
+        role: 'user' // 添加该字段，表示进入这个路由是需要登录的
+      }
     },
     {
       path: '/exam/score',
       name: 'score',
-      component: score
+      component: score,
+      meta: {
+        role: 'user' // 添加该字段，表示进入这个路由是需要登录的
+      }
     },
     {
       path: '/team/video',
@@ -169,12 +202,18 @@ export default new Router({
     {
       path: '/team/addCoach',
       name: 'addCoach',
-      component: addCoach
+      component: addCoach,
+      meta: {
+        role: 'admin' // 添加该字段，表示进入这个路由是需要登录的
+      }
     },
     {
       path: '/team/addVideo',
       name: 'addVideo',
-      component: addVideo
+      component: addVideo,
+      meta: {
+        role: 'admin' // 添加该字段，表示进入这个路由是需要登录的
+      }
     },
     {
       path: '/self',
@@ -214,7 +253,10 @@ export default new Router({
     {
       path: '/self/addComment',
       name: 'addComment',
-      component: addComment
+      component: addComment,
+      meta: {
+        role: 'student' // 添加该字段，表示进入这个路由是需要登录的
+      }
     }
   ]
 })

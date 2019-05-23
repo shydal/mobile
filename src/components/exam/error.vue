@@ -38,9 +38,12 @@
         <div class="detail">
             {{explains}}
         </div>
+         <foot></foot>
     </div>
+   
 </template>
 <script>
+import foot from '@/components/base/footer'
 export default {
     data(){
         return{
@@ -126,6 +129,9 @@ export default {
                 document.getElementById(this.examList[this.count].answer).checked =true; 
             });                         
         })
+    },
+    components:{
+        foot
     }
 }
 </script>

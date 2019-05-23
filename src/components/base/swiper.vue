@@ -6,7 +6,7 @@
 
           <a :href="item.href" rel="external nofollow" >
 
-           <img :src="item.url" class="img"/>
+           <img :src="item.url" class="img" @click="about"/>
 
            <span class="desc"></span>
           </a>
@@ -22,33 +22,40 @@
 export default {
     components: {
 
-  'mt-swipe': Swipe,
+      'mt-swipe': Swipe,
 
-  'mt-swipe-item': SwipeItem
+      'mt-swipe-item': SwipeItem
 
- },
+     },
 
- data () {
+     data () {
 
-  return {
+      return {
 
-  items: [{
+      items: [{
 
-   title: '你的名字',
+       title: '你的名字',
 
-   href: 'http://google.com',   url: '/static/lunbo1.jpg'
+       href: '/about/about',   url: '/static/lunbo1.jpg'
 
-  }, {
+      }, {
 
-   title: '我的名字',
+       title: '我的名字',
 
-   href: 'http://baidu.com',   url: '/static/lunbo2.jpg'
+       href: '/about/about',   url: '/static/lunbo2.jpg'
 
-  }]
+      }]
 
-  }
+      }
 
- }
+    },
+    methods:{
+        about(){
+              this.$router.push({
+                name:'about',
+            });
+        }
+    }
    
 }
 </script>

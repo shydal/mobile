@@ -34,12 +34,14 @@
                 </div>
             
                 </div>                
-            </div>   
+            </div>  
+            <foot></foot>
         </div>
    
 </template>
 <script>
 import { Z_DEFAULT_COMPRESSION } from 'zlib';
+import foot from '@/components/base/footer'
 
 export default {
      inject:['reload'],
@@ -137,7 +139,11 @@ export default {
     },
     created(){
        this.getAll();
+    },
+    components:{
+        foot
     }
+    
     
 }
 </script>

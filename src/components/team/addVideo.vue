@@ -23,9 +23,11 @@
         <div class="confirm">
               <mt-button type="primary" width="100%" @click.native="submit">确认</mt-button>
         </div>
+        <foot></foot>
     </div>
 </template>
 <script>
+import foot from '@/components/base/footer'
 export default {
     data(){
         return{
@@ -117,6 +119,9 @@ export default {
              console.log(self.img);
         },800);
         }
+    },
+    components:{
+        foot
     }
 }
 </script>

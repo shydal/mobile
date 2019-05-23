@@ -29,9 +29,11 @@
         <div class="confirm">
               <mt-button type="primary" width="100%" @click="add">确认报名</mt-button>
         </div>
+        <foot></foot>
     </div>
 </template>
 <script>
+import foot from '@/components/base/footer'
 export default {
     data(){
         return{
@@ -72,7 +74,7 @@ export default {
             
         }
     },
-     created:function() {
+    created:function() {
         var self=this;
         this.$axios.get('/api/license/findLicenseList').then((res)=>{ 
             if(res.data.state==='success') {
@@ -80,6 +82,9 @@ export default {
                 self.type=self.licenseTypeList[0].id;                
             }                    
         });
+    },
+    components:{
+        foot
     }
 }
 </script>

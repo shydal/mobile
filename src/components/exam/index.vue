@@ -9,9 +9,9 @@
     </div>
     <div class="tiaozhuan">
         <mt-cell title="c1驾照 科目一" to="/exam/paper?licenseId=5&subjectId=1" is-link></mt-cell>
-        <mt-cell title="c1驾照 科目四" to="/exam/paper?licenseId=5&subjectId=5"  is-link></mt-cell>
-        <mt-cell title="成绩录入"  to= "/exam/score" is-link></mt-cell>
-        <mt-cell title="历史成绩"  is-link></mt-cell>
+        <mt-cell title="c1驾照 科目四" to="/exam/paper?licenseId=5&subjectId=4"  is-link></mt-cell>
+        <mt-cell title="成绩录入" to="/exam/input" is-link></mt-cell>
+        <mt-cell title="历史成绩"  to= "/exam/score"  is-link></mt-cell>
     </div>
 </div>
     

@@ -1,7 +1,7 @@
 <template>
     <mt-tabbar  fixed>
   <mt-tab-item id="tab1">
-    <img slot="icon" src="../../assets/imgs/homeSelect.png">
+    <img slot="icon" src="../../assets/imgs/homeSelect.png" @click="index">
     首页
   </mt-tab-item>
   <mt-tab-item id="tab2" v-if="this.$store.state.id==null">
@@ -22,6 +22,15 @@ export default {
 
     }
   },
+  //  watch: {
+  //   $route(to, from) {
+  //       console.log(to);
+  //       console.log(from);
+  //   }
+  // },
+  //  beforeRouteUpdate (to, from, next) {
+  //  console.log('fds')
+  //   },
   created(){
     
   },
@@ -34,6 +43,11 @@ export default {
     self(){
          this.$router.push({
                 name:'self',
+          });
+    },
+     index(){
+         this.$router.push({
+                name:'index',
           });
     }
   }

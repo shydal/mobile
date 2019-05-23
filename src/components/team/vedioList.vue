@@ -1,6 +1,13 @@
 <template>
     <div>
-        <form action="" v-on:submit.prevent="">
+        <div class="head">
+            <mt-header fixed title="学车视频">
+                <router-link to="" slot="left">
+                    <mt-button icon="back" @click.native="$router.back(-1)">返回</mt-button>
+                </router-link>
+            </mt-header>
+        </div>
+        <form action="" v-on:submit.prevent="" class="search">
             <mt-search
             v-model="value"
             cancel-text="取消"
@@ -52,11 +59,12 @@
             </table>
         </center>
         </div> 
-        <div style="height:60px"></div>    
-
+        <div style="height:60px"></div> 
+        <foot></foot>   
     </div>
 </template>
 <script>
+import foot from '@/components/base/footer'
 import { debug } from 'util';
 export default {
      data(){
@@ -75,9 +83,10 @@ export default {
          var self = this;
              this.$axios.get('/api/video/getVideoList',{
           params:{                           
-                 subjectId:this.subjectId,
-                 pageIndex:this.pageIndex,
-                 pageSize:this.pageSize                        
+                 subjectId:self.subjectId,
+                 pageIndex:self.pageIndex,
+                 pageSize:self.pageSize,
+                 name:self.value                       
             }
         } ).then((res)=>{
             if(res.data.state=='success'){             
@@ -117,11 +126,18 @@ export default {
     },
     created(){
         this.search();
+    },
+    components:{
+        foot,
     }
 }
 </script>
 
 <style>
+.search{
+    width: 100%;
+    padding-top: 40px;
+}
 .movie_list {
     margin: 0px;
     padding: 0px;

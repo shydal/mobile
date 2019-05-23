@@ -1,5 +1,12 @@
 <template>
     <div>
+         <div class="head">
+            <mt-header fixed title="视频播放">
+                <router-link to="" slot="left">
+                    <mt-button icon="back" @click.native="$router.back(-1)">返回</mt-button>
+                </router-link>
+            </mt-header>
+        </div>
         <div class="title">
             {{video.title}}
         </div>
@@ -11,10 +18,12 @@
         <div class="duration">
              {{video.duration}}
         </div>
+        <foot></foot>
     </div>
 
 </template>
 <script>
+import foot from '@/components/base/footer'
 export default {
     data(){
         return{
@@ -47,8 +56,17 @@ export default {
          
 
           
+    },
+    components:{
+        foot
     }
    
 }
 </script>
+<style>
+.title{
+    padding-top: 40px;
+}
+</style>
+
 

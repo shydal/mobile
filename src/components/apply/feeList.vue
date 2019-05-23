@@ -55,9 +55,11 @@
      </section>
   </mt-tab-container-item>
 </mt-tab-container>
+<foot></foot>
 </div>
 </template>
 <script>
+import foot from '@/components/base/footer'
 export default {
      data(){
         return{
@@ -67,14 +69,28 @@ export default {
     },
     methods:{
         handleClick(id){
-           
-            this.$router.push({
-                name:'apply',
-                 query: {
-                        id: id
-                        }
-            });
-       
+            if(this.$store.state.role){
+                
+                var role= JSON.parse(this.$store.state.role);
+                 if(role.roleName==='user'){
+                     this.$router.push({
+                        name:'apply',
+                        query: {
+                                id: id
+                                }
+                    });
+                    return 
+                 }else if(role.roleName==='student'){
+                     alert('你已经报名请勿重复报名');
+                     return
+                 }else{
+                     alert('教练及管理员无需报名');
+                     return
+                 }
+            }else{
+                 this.$router.push('/login');
+                    return
+            }    
         }
     },
      created(){
@@ -85,6 +101,9 @@ export default {
             }                    
         });
     },
+    components:{
+        foot,
+    }
 }
 </script>
 <style>

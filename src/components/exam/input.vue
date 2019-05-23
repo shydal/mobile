@@ -9,9 +9,9 @@
         </div>
         <div class="field">
         <mt-field label="用户名" :value="this.$store.state.username" readonly></mt-field>
-        <mt-field label="驾照类型" :value="user.licenseType.type" readonly></mt-field>
-        <mt-field label="科目" :value="subject" readonly></mt-field>
-        <mt-field label="分数" ></mt-field>
+        <mt-field label="驾照类型" :value="user.licenseType.type"   readonly></mt-field>
+        <mt-field label="科目" :value="subject" v-model="subjectId" readonly></mt-field>
+        <mt-field label="分数" v-model="mark" ></mt-field>
         </div>
         <div class="confirm">
               <mt-button type="primary" width="100%" @click.native="tijiao">提交</mt-button>
@@ -31,7 +31,7 @@ export default {
     methods:{
         tijiao(){        
             var reg = new RegExp("^(\\d|[1-9]\\d|100)$");
-           // debugger
+            
            if(!reg.test(this.mark)) {
                alert("请输入0-100");
                return
@@ -57,7 +57,7 @@ export default {
         this.$axios.get('/api/state/findStatebyUserId',
         {
             params: {
-                userId:this.$store.state.id,               
+                userId:self.$store.state.id,               
             }
         }).then((res)=>{
             if(res.data.state =="success"){
@@ -76,9 +76,10 @@ export default {
          this.$axios.get('/api/user/findUserById',
         {
             params: {
-                id:this.$store.state.id,               
+                id:self.$store.state.id,               
             }
         }).then((res)=>{
+            
             if(res.data.state =="success"){
                 
                 self.user = res.data.data;

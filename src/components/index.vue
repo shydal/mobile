@@ -47,7 +47,7 @@
                     <span> 预约教练</span>
                 </div>
                 <div class="category-item">
-                  <div>  <img src="../assets/imgs/help.png"/></div>
+                  <div>  <img src="../assets/imgs/help.png" @click="contact"/></div>
                     <span> 联系我们</span>
                 </div>
                 <div class="category-item">
@@ -71,11 +71,13 @@
         </section>
         <div style="height:"></div>
     </div>
-    <router-view/>
+    <!-- <router-view /> -->
+    <foot></foot>
 </div>  
 </template>
 <script>
  import swiper from '@/components/base/swiper.vue'
+ import foot from '@/components/base/footer'
 export default {
     data(){
         return{
@@ -130,10 +132,16 @@ export default {
             this.$router.push({
                 name:'subscribe',
             });
+        },
+        contact(){
+            this.$router.push({
+                name:'contact',
+            });
         }
     },
     components:{
         swiper,
+        foot
     }
 }
 </script>

@@ -1,13 +1,13 @@
 <template>
 
     <div>
-        <!-- <div class="head">
-        <mt-header fixed title="选择教练">
-            <router-link to="/" slot="left">
-                <mt-button icon="back">返回</mt-button>
+         <div class="head">
+        <mt-header fixed title="预约教练">
+            <router-link to="" slot="left">
+                <mt-button icon="back" @click.native="$router.back(-1)">返回</mt-button>
             </router-link>
         </mt-header>
-        </div> -->
+        </div>
         <div class="search">
             <mt-search
             v-model="value"
@@ -128,7 +128,7 @@ export default {
 
 <style>
 .search{
-    /* padding-top: 40px; */
+    padding-top: 40px;
     width: 100%;
 }
 .movie_list {
@@ -144,7 +144,7 @@ export default {
 }
 .movie_list ul li {
     width: 45%;
-    margin: 0 0 0 3%;
+    margin: 0 0 0 2%;
     padding-top: 10px;
     float: left;
     position: relative;

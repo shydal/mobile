@@ -14,9 +14,11 @@
              <mt-cell title="查看错题" :to="'/exam/error?paperId='+paperId"  is-link></mt-cell>
              <mt-cell title="历史成绩" to='/exam/score' is-link></mt-cell>      
         </div>
+        <foot></foot>
     </div>
 </template>
 <script>
+import foot from '@/components/base/footer'
 export default {
     data(){
         return {
@@ -26,6 +28,9 @@ export default {
     created(){
       this.paperId =  this.$route.query.paperId;
      
+    },
+    components:{
+        foot
     }
 }
 </script>

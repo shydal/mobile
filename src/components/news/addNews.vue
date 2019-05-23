@@ -27,9 +27,11 @@
          <div class="confirm">
               <mt-button type="primary" width="100%" @click.native="save">添加</mt-button>
         </div>
+        <foot></foot>
 </div>  
 </template>
 <script>
+import foot from '@/components/base/footer'
     import { quillEditor } from 'vue-quill-editor'
      export default {
     	data() {
@@ -79,6 +81,9 @@
                self.detail = null;                                       
                 });
             }
+        },
+        components:{
+            foot
         }             
     }
 </script> 

@@ -15,9 +15,11 @@
         <div class="confirm">
               <mt-button type="primary" width="100%" @click.native="submit">提交信息</mt-button>
         </div>
+        <foot></foot>
     </div>
 </template>
 <script>
+import foot from '@/components/base/footer'
 export default {
     data(){
         return{
@@ -27,7 +29,7 @@ export default {
         }
     },
     methods:{
-         upload(event){        
+        upload(event){        
           this.image = event.target.files[0];
           console.log(this.image);
         },
@@ -48,6 +50,9 @@ export default {
             });
            
         }
+    },
+    components:{
+        foot
     }
 }
 </script>
